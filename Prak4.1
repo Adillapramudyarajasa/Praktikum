@@ -1,0 +1,67 @@
+data_adilla = read.delim("clipboard") 
+View(data_adilla)
+
+adilla <- data_adilla[data_adilla$Bedrooms==2,]  
+View(adilla)
+
+adilla$Bathrooms <- ifelse(adilla$Bathrooms > 2, c("large"), c("small"))
+View(adilla)
+
+
+adilla$newvariable <- adilla$Price/adilla$SqFt
+View(adilla)
+
+adilla$newvariable<-NULL
+View(adilla)
+
+data_adilla.kolom1dan2 <- data_adilla[,1:2] 
+View(data_adilla.kolom1dan2)
+
+data_adilla.kolom3dan4 <- data_adilla[,3:4] 
+View(data_adilla.kolom3dan4)
+
+data_adilla.kolom1sd4<-cbind(data_adilla.kolom1dan2, data_adilla.kolom3dan4) 
+View(data_adilla.kolom1sd4)
+
+data_adilla.baris1sd3 <- data_adilla[1:3,] 
+data_adilla.baris4sd6 <- data_adilla[4:6,] 
+data_adilla.baris1sd6 <- rbind(data_adilla.baris1sd3, data_adilla.baris4sd6) 
+View(data_adilla.baris1sd6)
+
+data_adilla.sort<-data_adilla[order(data_adilla$Price),] 
+View(data_adilla.sort)
+
+
+
+
+
+adilla1=read.csv2("C:/Users/ASUS/Downloads/adilla.csv")
+View(adilla1)
+
+adilla11 <- adilla1[adilla1$tinggi.badan==165,]  
+View(adilla11)
+
+adilla1$tinggi.badan <- ifelse(adilla1$tinggi.badan > 160, c("tinggi"), c("pendek"))
+View(adilla1)
+
+adilla1$Jurusan <- c("Infor20")
+adilla1$Fakultas<- c("FTI")
+View(adilla1)
+adilla1$Fakultas<-NULL
+
+adilla1.namagen <- adilla1[1:2] 
+View(adilla1.namagen)
+adilla1.namagen1 <- adilla1[3:4]
+View(adilla1.namagen1)
+adilla1.gabungan<-cbind(adilla1.namagen,adilla1.namagen1)
+View(adilla1.gabungan)
+
+adilla_baris<-adilla1[1:5,]
+View(adilla_baris)
+adilla_baris1<-adilla1[25:30,]
+View(adilla_baris1)
+adilla_gabungan<-rbind(adilla_baris,adilla_baris1)
+View(adilla_gabungan)
+
+data_adilla.sort<-adilla1[order(adilla1$waktu.perjalanan),]
+View(data_adilla.sort)
